@@ -1,0 +1,444 @@
+:root{
+    /* colors */
+    --black: #0c0c0d;
+    --gray: #808080;
+    --yellow: #ffc600;
+    --white: #ffffff;
+
+    /* fonts */
+    --sans: 'Noto Sans';
+    --serif: 'Noto Serif';
+
+    /* font weight */
+    --regular: 400;
+    --bold: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: var(--black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* header styling */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0c0c0d;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a{
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: var(--bold);
+    margin-left: 2.5rem;
+}
+
+.navbar a:hover{
+    transition: none;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+}
+
+#check{
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+/* town slider styling */
+.town-slider{
+    padding-top: 132px;
+}
+
+.town-slider .heading{
+    color: var(--white);
+    font-size: 2em;
+    font-family: var(--sans);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.town-slider .heading:hover{
+    transition: none;
+    color: var(--yellow);
+}
+
+.town-slider .subtitle{
+    position: relative;
+    color: var(--white);
+    font-size: 1em;
+    font-family: var(--sans);
+    margin: 2rem 2rem;
+    text-align: center;
+}
+
+.slider{
+    height: 100vh;
+    margin-top: 40px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .town-container .town{
+    font-family: var(--sans);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.slider .town-container .town .card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .town-container .town .text-town{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    padding: 2% 10% 2% 5%;
+    border-radius: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    background: var(--black);
+    text-align: justify;
+}
+
+.text-town .desc-town{
+    line-height: 1.3em;
+}
+
+/* thumbnail styling */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .town{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .town .card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* arrow styling */
+.arrow{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrow button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(39, 39, 39, 0.4);
+    border: none;
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: bolder;
+    transition: .5s;
+}
+
+.arrow button:hover{
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+/* animation */
+.slider .town-container .town:nth-child(1){
+    z-index: 1;
+}
+
+.slider .town-container .town:nth-child(1) .text-town .name-town,
+.slider .town-container .town:nth-child(1) .text-town .desc-town{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showcontent .5s 1s linear 1 forwards;
+}
+
+@keyframes showcontent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.slider .town-container .town:nth-child(1) .text-town .name-town{
+    animation-delay: 1.2s!important;
+}
+
+.slider .town-container .town:nth-child(1) .text-town .desc-town{
+    animation-delay: 1.4s!important;
+}
+
+/* next */
+.slider.next .town-container .town:nth-child(1) .card-video{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showvideo .5s linear 1 forwards;
+}
+
+@keyframes showvideo{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.slider.next .town-container .town:nth-last-child(1){
+    overflow: hidden;
+    animation: showthumbnail .5s linear 1 forwards;
+}
+
+.slider.prev .town-container .town .card-video{
+    z-index: 100;
+}
+
+@keyframes showthumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.slider.next .thumbnail{
+    animation: nextanimate .5s linear 1 forwards;
+}
+
+
+@keyframes nextanimate{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* prev */
+.slider.prev .town-container .town:nth-child(2){
+    z-index: 2;
+}
+
+.slider.prev .town-container .town:nth-child(2) .card-video{
+    animation: minimize 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes minimize{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.slider.prev .thumbnail .town:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showthumbnail .5s linear 1 forwards;
+}
+
+.slider.next .arrow button,
+.slider.prev .arrow button{
+    pointer-events: none;
+}
+
+.slider.prev .town-container .town:nth-child(2) .text-town .name-town,
+.slider.prev .town-container .town:nth-child(2) .text-town .desc-town{
+    animation: minicontent 1.5s linear 1 forwards!important;
+}
+
+@keyframes minicontent{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* footer styling */
+footer{
+    position: sticky;
+    top: 100%;
+    background-color: var(--black);
+    padding: 1.3rem 10%;
+}
+
+.foot-container{
+    width: 100%;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+}
+
+.socials a{
+    background-color: var(--white);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.socials a i{
+    font-size: 1.5em;
+    color: var(--black);
+}
+
+.socials a:hover{
+    background-color: var(--yellow);
+    transition: .5s ease;
+}
+
+.foot-navigation{
+    margin: 30px 0;
+}
+
+.foot-navigation ul{
+    display: flex;
+    justify-content: center;
+}
+
+.foot-navigation ul li a{
+    color: var(--white);
+    font-size: 1.3em;
+    margin: 1rem 20px 0 20px;
+    transition: .5s ease;
+    text-decoration: none;
+}
+
+.foot-navigation ul li a:hover{
+    transition: none;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+}
+
+.foot-copyright{
+    padding: 1rem 10%;
+    text-align: center;
+}
+
+.foot-copyright p{
+    font-family: var(--serif);
+    color: var(--white);
+}
+
+.foot-copyright span{
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+/* RESPONSIVE SETTINGS */
+@media(max-width: 992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media(max-width: 768px){
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-open{
+        display: none;
+    }
+
+    .icons #menu-close{
+        display: none;
+    }
+
+    #check:checked~.icons #menu-close{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--black);
+        overflow: hidden;
+        transition: .5s ease-in;
+    }
+
+    #check:checked~.navbar{
+        height: 13.8rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .5s ease-in;
+    }
+
+    #check:checked~.navbar a{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

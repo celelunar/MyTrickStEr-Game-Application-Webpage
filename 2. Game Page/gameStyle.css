@@ -1,0 +1,267 @@
+:root{
+    /* colors */
+    --black: #0c0c0d;
+    --gray: #808080;
+    --yellow: #ffc600;
+    --white: #ffffff;
+
+    /* fonts */
+    --sans: 'Noto Sans';
+    --serif: 'Noto Serif';
+
+    /* font weight */
+    --regular: 400;
+    --bold: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* header styling */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black);
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a{
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: var(--bold);
+    margin-left: 2.5rem;
+}
+
+.navbar a:hover{
+    transition: none;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+}
+
+#check{
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+/* video gallery styling */
+.gameplay{
+    padding-top: 132px;
+}
+
+.gameplay .heading{
+    color: var(--white);
+    font-size: 2em;
+    font-family: var(--sans);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.gameplay .heading:hover{
+    transition: none;
+    color: var(--yellow);
+}
+
+.gameplay .subheading{
+    color: var(--white);
+    font-size: 1.5em;
+    font-family: var(--sans);
+    padding-top: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.gameplay .subtitle{
+    color: var(--white);
+    font-size: 1em;
+    font-family: var(--sans);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.video-container,
+.img-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-container .video,
+.img-container .image{
+    height: 15rem;
+    width: 25rem;
+    margin: 2rem;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.video-container .video iframe,
+.img-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    outline: none;
+    border: none;
+}
+
+.img-container .image img{
+    transition: transform .5s ease;
+}
+
+.img-container .image img:hover{
+    transform: scale(1.25);
+}
+
+/* footer styling */
+footer{
+    position: sticky;
+    top: 100%;
+    background-color: var(--black);
+    padding: 1.3rem 10%;
+}
+
+.foot-container{
+    width: 100%;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+}
+
+.socials a{
+    background-color: var(--white);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.socials a i{
+    font-size: 1.5em;
+    color: var(--black);
+}
+
+.socials a:hover{
+    background-color: var(--yellow);
+    transition: .5s ease;
+}
+
+.foot-navigation{
+    margin: 30px 0;
+}
+
+.foot-navigation ul{
+    display: flex;
+    justify-content: center;
+}
+
+.foot-navigation ul li a{
+    color: var(--white);
+    font-size: 1.3em;
+    margin: 1rem 20px 0 20px;
+    transition: .5s ease;
+    text-decoration: none;
+}
+
+.foot-navigation ul li a:hover{
+    transition: none;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+}
+
+.foot-copyright{
+    padding: 1rem 10%;
+    text-align: center;
+}
+
+.foot-copyright p{
+    font-family: var(--serif);
+    color: var(--white);
+}
+
+.foot-copyright span{
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+/* RESPONSIVE SETTINGS */
+@media(max-width: 992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media(max-width: 768px){
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-open{
+        display: none;
+    }
+
+    .icons #menu-close{
+        display: none;
+    }
+
+    #check:checked~.icons #menu-close{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--black);
+        overflow: hidden;
+        transition: .5s ease-in;
+    }
+
+    #check:checked~.navbar{
+        height: 13.8rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .5s ease-in;
+    }
+
+    #check:checked~.navbar a{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

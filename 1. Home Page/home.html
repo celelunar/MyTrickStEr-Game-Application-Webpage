@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TrickStEr | Hello, Soul Divers!</title>
+
+    <!-- meta tags -->
+    <meta name="title" content="My TrickStEr | Hello, Soul Divers!">
+    <meta name="description" content="A hero caught in between two worlds, will you have what it takes to save both? Embark on epic quest to unlock the mysteries of The Nameless Kingdom, adopt a familiar and test your skills! ">
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&amp;display=auto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=auto">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="homeStyle.css">
+
+    <!-- preload image -->
+    <link rel="preload" as="image" href="../0. Assets/background.jpg">
+
+    <!-- shortcut icon -->
+    <link rel="shortcut icon" href="https://sgimage.netmarble.com/favicon/enngb/favicon.ico">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="../0. Assets/logo.png" width="162" height="81">
+        </a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-open"></i>
+            <i class='bx bx-x' id="menu-close"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="../1. Home Page/home.html" style="--i:0">Home</a>
+            <a href="../2. Game Page/game.html" style="--i:1">Game</a>
+            <a href="../3. Town Page/town.html" style="--i:2">Towns</a>
+            <a href="../5. Support Page/support.html" style="--i:3">Support</a>
+        </nav>
+    </header>
+
+    <!-- video banner -->
+    <section class="banner">
+        <video class="video-slide active-slide" src="https://sgimage.netmarble.com/mobile/game/enn/landing/common/videos/pc/bgVideo_3150.mp4" muted loop autoplay></video>
+        <video class="video-slide" src="../0. Assets/video.mp4" muted loop autoplay></video>
+        <div class="banner-text">
+            <h1 id="title">Welcome, Soul Divers!</h1>
+            <p>A hero caught in between two worlds, Will you have what it takes to save both?</p>
+            <p>Embark on epic quest to unlock the mysteries of The Nameless Kingdom, adopt a familiar and test your skills!</p>
+        </div>
+
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <!-- story -->
+    <section class="story">
+        <h1 class="heading">Introduction</h1>
+        <div class="story-container">
+            <p class="desc-story">You are about to enter a brand new world as a beta tester of a virtual reality game called Soul Divers.
+                But once you explore and become stronger, you'll realize this world is not a virtual one.
+                A mysterious girl called Rania entrusts you with a mission:
+                Rebuild your kingdom ransacked by powerful foes and save the two connected worlds from certain destruction!
+            </p>
+            <iframe class= "story-video" width="560" height="315" src="https://www.youtube.com/embed/Ym2mMMUtRFc?si=JYzWHx7rdR33vqCL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- map -->
+    <section class="map">
+        <h1 class="heading">World Map</h1>
+        <div class="map-container">
+            <div class="desc-map">
+                <p>A captivating landscape, a mesmerizing tapestry of magical realms awaiting exploration. From ancient forests hiding secrets,
+                    to otherworldly vast deserts. Each region is meticulously crafted with vibrant colors and whimsical designs which create this
+                    seamless interweave between ethereal plains and bustling towns, providing a visually stunning backdrop for the epic adventure.
+                    This living, breathing canvas enhances the immersive experience, inviting soul divers to uncover the mysteries, engage in epic battles, 
+                    and immerse themselves in the enchanting narrative that unfolds.</p>
+            </div>
+            <div class="img-map">
+                <img src="../0. Assets/map.png" alt="image map">
+            </div>
+        </div>
+    </section>
+
+    <!-- town -->
+    <section class="town">
+        <h1 class="heading">Towns</h1>
+        <div class="town-container">
+            <div class="desc-town">
+                <p>See the stark difference between bustling and peaceful cities. Though, they're just as mesmerizing to one another.</p>
+            </div>
+            <div class="card">
+                <article class="card-article">
+                    <video src="https://sgimage.netmarble.com/images/netmarble/enngb/20220106/0lni1641448884673.mp4" loop autoplay muted class="card-video"></video>
+
+                    <div class="card-text">
+                        <h2 class="card-title">Eastern Heartlands</h2>
+                        <span class="card-desc">A mysterious land studded with ancient ruins. Go for a run with Catrumpus through this peaceful landscape where unexpected advantures lurks within.</span>
+                    </div>
+                </article>
+
+                <article class="card-article">
+                    <video src="https://sgimage.netmarble.com/images/netmarble/enngb/20220106/h61s1641448881478.mp4" loop autoplay muted  class="card-video"></video>
+
+                    <div class="card-text">
+                        <h2 class="card-title">Burning Desert</h2>
+                        <span class="card-desc">A vast desert in the southern Summerlands. If you get lost in the desert, just look for the giant airship in the sky. A brilliant golden city awaits you beneath.</span>
+                    </div>
+                </article>
+
+                <article class="card-article">
+                    <video src="https://sgimage.netmarble.com/images/netmarble/enngb/20220106/sbxo1641448896480.mp4" loop autoplay muted  class="card-video"></video>
+
+                    <div class="card-text">
+                        <h2 class="card-title">Witch's Woods</h2>
+                        <span class="card-desc">A mystical forest shrouded in never-ending night. Don't get distracted by the enthralling moonlight, you might get bewitched!</span>
+                    </div>
+                </article>
+
+                <article class="card-article">
+                    <video src="https://sgimage.netmarble.com/images/netmarble/enngb/20220106/9oya1641448889493.mp4" loop autoplay muted  class="card-video"></video>
+
+                    <div class="card-text">
+                        <h2 class="card-title">Winter Wonderland</h2>
+                        <span class="card-desc">A realm of snow and ice, home of the yetis. It's bitter cold, but you'll feel warm when you meet new friends.</span>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- sign up attraction -->
+    <section class="attract">
+        <div class="attract-divers">
+            <img src="../0. Assets/background2.jpg" alt="img attraction">
+            <a href="../4. Sign Up Page/signUp.html" class="register">Register Now!</a>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="foot-container">
+            <div class="socials">
+                <a href="#"><i class='bx bxl-facebook' ></i></a>
+                <a href="#"><i class='bx bxl-instagram' ></i></a>
+                <a href="#"><i class='bx bxl-twitch'></i></a>
+                <a href="#"><i class='bx bxl-youtube' ></i></a>
+                <a href="#"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <div class="foot-navigation">
+                <ul>
+                    <li><a href="../1. Home Page/home.html">Home</a></li>
+                    <li><a href="../2. Game Page/game.html">Game</a></li>
+                    <li><a href="../3. Town Page/town.html">Towns</a></li>
+                    <li><a href="../5. Support Page/support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="foot-copyright">
+                <p>Copyright &copy;2023 Designed by <span class="designer">Diva Nabila Henryka</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- javascript -->
+    <script src="homeScript.js"></script>
+</body>
+</html>
